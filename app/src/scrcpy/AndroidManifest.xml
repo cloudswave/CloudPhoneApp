@@ -15,13 +15,8 @@
         tools:node="replace">
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:resizeableActivity="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"
+            android:resizeableActivity="true" />
     </application>
 
 </manifest>

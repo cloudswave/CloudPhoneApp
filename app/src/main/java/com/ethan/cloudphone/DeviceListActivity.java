@@ -151,8 +151,6 @@ public class DeviceListActivity extends Activity {
         }
         
         btnConnect.setOnClickListener(v -> {
-            // 跳转到主页面投屏
-            Intent intent = new Intent(DeviceListActivity.this, MainActivity.class);
             // 从 device_serial 提取 IP 和端口 (格式: ip:port)
             String deviceSerial = device.deviceSerial;
             String deviceIp = "";

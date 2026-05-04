@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -116,9 +116,8 @@ public class DeviceListActivity extends Activity {
                 View itemView = createDeviceItem(device);
                 GridLayout.LayoutParams params = new GridLayout.LayoutParams();
                 params.width = 0;
-                params.height = 0;
+                params.height = dpToPx(140); // 固定高度
                 params.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f);
-                params.rowSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f);
                 params.setMargins(8, 8, 8, 8);
                 itemView.setLayoutParams(params);
                 gridLayout.addView(itemView);
@@ -163,14 +162,16 @@ public class DeviceListActivity extends Activity {
             .setView(dialogView)
             .setPositiveButton("兑换", (dialog, which) -> {
                 String code = etCode.getText().toString().trim();
-                if (code.isEmpty()) {
-                    Toast.makeText(this, "请输入兑换码", Toast.LENGTH_SHORT).show();
-                    return;
+                if (!code.isEmpty()) {
+                    redeemDevice(code);
                 }
-                redeemDevice(code);
             })
             .setNegativeButton("取消", null)
             .show();
+    }
+    
+    private int dpToPx(int dp) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, getResources().getDisplayMetrics());
     }
     
     private void redeemDevice(String code) {

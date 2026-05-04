@@ -1,4 +1,4 @@
-package xyz.aicy.scrcpy;
+package com.ethan.cloudphone;
 
 import android.annotation.SuppressLint;
 import androidx.annotation.NonNull;

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/et_redeem_code"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/input_field_background"
+        android:hint="请输入兑换码"
+        android:inputType="text"
+        android:paddingHorizontal="16dp"
+        android:textColor="@color/white"
+        android:textColorHint="#80FFFFFF"
+        android:textSize="14sp" />
+
+</LinearLayout>

@@ -2,21 +2,14 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/main_background_image"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@null"
-        android:scaleType="centerCrop"
-        android:src="@drawable/bg_main" />
+    android:layout_height="match_parent"
+    android:background="@color/background_dark">
 
     <View
         android:id="@+id/main_background_overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#80000000" />
+        android:background="@color/background_dark" />
 
     <FrameLayout
         android:layout_width="match_parent"

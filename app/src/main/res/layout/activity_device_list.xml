@@ -27,7 +27,7 @@
             android:id="@+id/btn_add"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
             android:contentDescription="添加设备"
             android:src="@drawable/ic_add"
             android:tint="@color/black" />

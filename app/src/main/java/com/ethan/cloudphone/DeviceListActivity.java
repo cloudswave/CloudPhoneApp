@@ -113,12 +113,19 @@ public class DeviceListActivity extends Activity {
             int columnCount = 3;
             gridLayout.setColumnCount(columnCount);
             
-            for (ApiClient.Device device : devices) {
+            // 获取屏幕宽度计算item宽度
+            int screenWidth = getResources().getDisplayMetrics().widthPixels;
+            int itemWidth = (screenWidth - dpToPx(16 + 8 + 8)) / 3; // 屏幕宽度 - padding(16dp) - margins(8dp*2 * 3)
+            int itemHeight = (int) (itemWidth * 16.0 / 9); // 9:16 比例
+            
+            for (int i = 0; i < devices.size(); i++) {
+                ApiClient.Device device = devices.get(i);
                 View itemView = createDeviceItem(device);
                 GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-                params.width = GridLayout.LayoutParams.MATCH_PARENT;
-                params.height = dpToPx(140);
-                params.columnSpec = GridLayout.spec(device.id % 3, 1f);
+                params.width = itemWidth;
+                params.height = itemHeight + dpToPx(40); // 加上按钮区域高度
+                params.columnSpec = GridLayout.spec(i % 3, 1f);
+                params.rowSpec = GridLayout.spec(i / 3);
                 params.setMargins(8, 8, 8, 8);
                 itemView.setLayoutParams(params);
                 gridLayout.addView(itemView);

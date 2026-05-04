@@ -205,6 +205,8 @@ public class ApiClient {
                 device.deviceSerial = json.getString("device_serial");
                 device.deviceName = json.getString("device_name");
                 device.createdAt = json.optString("created_at", "");
+                device.ip = json.optString("ip", "");
+                device.port = json.optInt("port", 0);
                 
                 // 检查是否分配给当前用户
                 JSONArray allocatedUsers = json.optJSONArray("allocated_users");
@@ -339,5 +341,7 @@ public class ApiClient {
         public String createdAt;
         public boolean allocated;
         public String expiresAt;
+        public String ip;
+        public int port;
     }
 }

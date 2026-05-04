@@ -142,9 +142,10 @@ public class DeviceListActivity extends Activity {
         }
         
         btnConnect.setOnClickListener(v -> {
-            // 跳转到原来的连接设置页面
+            // 跳转到主页面投屏
             Intent intent = new Intent(DeviceListActivity.this, MainActivity.class);
-            intent.putExtra("device_serial", device.deviceSerial);
+            intent.putExtra("device_ip", device.ip);
+            intent.putExtra("device_port", device.port);
             intent.putExtra("device_name", device.deviceName);
             startActivity(intent);
         });

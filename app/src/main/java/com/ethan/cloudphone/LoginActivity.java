@@ -34,9 +34,18 @@ public class LoginActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
         
         apiClient = ApiClient.getInstance(this);
+        
+        // 检查是否已登录，已登录直接跳 MainActivity
+        if (apiClient.hasServerUrl() && apiClient.isLoggedIn()) {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
+        
+        setContentView(R.layout.activity_login);
         
         initViews();
         

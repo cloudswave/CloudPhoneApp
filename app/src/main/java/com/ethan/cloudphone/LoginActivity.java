@@ -37,12 +37,18 @@ public class LoginActivity extends Activity {
         
         apiClient = ApiClient.getInstance(this);
         
-        // 检查是否已登录，已登录直接跳 MainActivity
+        // 检查是否已保存服务器地址和登录状态
         if (apiClient.hasServerUrl() && apiClient.isLoggedIn()) {
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            // 已保存服务器且已登录，直接跳设备列表
+            Intent intent = new Intent(LoginActivity.this, DeviceListActivity.class);
             startActivity(intent);
             finish();
             return;
+        }
+        
+        // 清除旧状态，确保显示正确的初始页面
+        if (!apiClient.hasServerUrl()) {
+            apiClient.setServerUrl("");
         }
         
         setContentView(R.layout.activity_login);

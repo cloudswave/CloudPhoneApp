@@ -3,7 +3,7 @@ evaluationDependsOn(':server')
 apply plugin: 'com.android.application'
 
 android {
-    namespace 'xyz.aicy.scrcpy'
+    namespace 'com.ethan.cloudphone'
     flavorDimensions = ["default"]
 
     compileSdkVersion 33
@@ -12,7 +12,7 @@ android {
         targetSdkVersion 33
         versionCode version_code
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        setProperty("archivesBaseName", "scrcpy")
+        setProperty("archivesBaseName", "CloudPhone")
         
         // Enable 16KB page alignment for native libraries
         ndk {
@@ -22,7 +22,7 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file("scrcpy.jks")
+            storeFile file("cloudphone.jks")
 
             def properties = new Properties()
             if (file("../local.properties").exists()){
@@ -52,7 +52,7 @@ android {
 
     productFlavors {
         scrcpy {
-            applicationId "xyz.aicy.scrcpy"
+            applicationId "com.ethan.cloudphone"
         }
     }
 

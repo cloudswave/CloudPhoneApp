@@ -315,7 +315,9 @@ public class ApiClient {
             }
             conn.setConnectTimeout(5000);
             conn.setReadTimeout(5000);
-            return conn.getResponseCode() == 200;
+            int code = conn.getResponseCode();
+            // 200=已登录，401=未登录但服务器可达
+            return code == 200 || code == 401;
         } catch (Exception e) {
             Log.e(TAG, "Test connection failed", e);
             return false;

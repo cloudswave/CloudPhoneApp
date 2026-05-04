@@ -151,29 +151,11 @@ public class DeviceListActivity extends Activity {
         }
         
         btnConnect.setOnClickListener(v -> {
-            // 从 device_serial 提取 IP 和端口 (格式: ip:port)
-            String deviceSerial = device.deviceSerial;
-            String deviceIp = "";
-            int devicePort = 0;
-            if (deviceSerial != null && deviceSerial.contains(":")) {
-                String[] parts = deviceSerial.split(":");
-                deviceIp = parts[0];
-                try {
-                    devicePort = Integer.parseInt(parts[1]);
-                } catch (NumberFormatException e) {
-                    devicePort = 0;
-                }
-            }
-            
-            if (!TextUtils.isEmpty(deviceIp) && devicePort > 0) {
-                Intent intent = new Intent(DeviceListActivity.this, MainActivity.class);
-                intent.putExtra("device_ip", deviceIp);
-                intent.putExtra("device_port", devicePort);
-                intent.putExtra("device_name", device.deviceName);
-                startActivity(intent);
-            } else {
-                Toast.makeText(this, "设备地址无效", Toast.LENGTH_SHORT).show();
-            }
+            // 直接传递 device_serial 到 MainActivity
+            Intent intent = new Intent(DeviceListActivity.this, MainActivity.class);
+            intent.putExtra("device_serial", device.deviceSerial);
+            intent.putExtra("device_name", device.deviceName);
+            startActivity(intent);
         });
         
         return view;

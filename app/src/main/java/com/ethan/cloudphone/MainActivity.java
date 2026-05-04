@@ -229,12 +229,10 @@ public class MainActivity extends Activity implements Scrcpy.ServiceCallbacks, S
             if (getIntent() != null && getIntent().getExtras() != null) {
                 headlessMode = getIntent().getExtras().getBoolean(START_REMOTE, headlessMode);
                 
-                // 从设备列表页传入的 IP 和端口
-                String deviceIp = getIntent().getExtras().getString("device_ip");
-                int devicePort = getIntent().getExtras().getInt("device_port", 0);
-                if (!TextUtils.isEmpty(deviceIp) && devicePort > 0) {
-                    String serverAdr = deviceIp + ":" + devicePort;
-                    PreUtils.put(this, Constant.CONTROL_REMOTE_ADDR, serverAdr);
+                // 从设备列表页传入的 device_serial
+                String deviceSerial = getIntent().getExtras().getString("device_serial");
+                if (!TextUtils.isEmpty(deviceSerial)) {
+                    PreUtils.put(this, Constant.CONTROL_REMOTE_ADDR, deviceSerial);
                     headlessMode = true;
                 }
             }

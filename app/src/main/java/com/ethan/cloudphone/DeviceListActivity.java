@@ -116,9 +116,9 @@ public class DeviceListActivity extends Activity {
             for (ApiClient.Device device : devices) {
                 View itemView = createDeviceItem(device);
                 GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-                params.width = 0;
-                params.height = dpToPx(140); // 固定高度
-                params.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f);
+                params.width = GridLayout.LayoutParams.MATCH_PARENT;
+                params.height = dpToPx(140);
+                params.columnSpec = GridLayout.spec(device.id % 3, 1f);
                 params.setMargins(8, 8, 8, 8);
                 itemView.setLayoutParams(params);
                 gridLayout.addView(itemView);

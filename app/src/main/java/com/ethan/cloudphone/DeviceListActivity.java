@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
@@ -152,10 +153,29 @@ public class DeviceListActivity extends Activity {
         btnConnect.setOnClickListener(v -> {
             // 跳转到主页面投屏
             Intent intent = new Intent(DeviceListActivity.this, MainActivity.class);
-            intent.putExtra("device_ip", device.ip);
-            intent.putExtra("device_port", device.port);
-            intent.putExtra("device_name", device.deviceName);
-            startActivity(intent);
+            // 从 device_serial 提取 IP 和端口 (格式: ip:port)
+            String deviceSerial = device.deviceSerial;
+            String deviceIp = "";
+            int devicePort = 0;
+            if (deviceSerial != null && deviceSerial.contains(":")) {
+                String[] parts = deviceSerial.split(":");
+                deviceIp = parts[0];
+                try {
+                    devicePort = Integer.parseInt(parts[1]);
+                } catch (NumberFormatException e) {
+                    devicePort = 0;
+                }
+            }
+            
+            if (!TextUtils.isEmpty(deviceIp) && devicePort > 0) {
+                Intent intent = new Intent(DeviceListActivity.this, MainActivity.class);
+                intent.putExtra("device_ip", deviceIp);
+                intent.putExtra("device_port", devicePort);
+                intent.putExtra("device_name", device.deviceName);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "设备地址无效", Toast.LENGTH_SHORT).show();
+            }
         });
         
         return view;

@@ -40,10 +40,10 @@ import android.widget.ListPopupWindow;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
-import xyz.aicy.scrcpy.utils.PreUtils;
-import xyz.aicy.scrcpy.utils.Progress;
-import xyz.aicy.scrcpy.utils.ThreadUtils;
-import xyz.aicy.scrcpy.utils.Util;
+import com.ethan.cloudphone.utils.PreUtils;
+import com.ethan.cloudphone.utils.Progress;
+import com.ethan.cloudphone.utils.ThreadUtils;
+import com.ethan.cloudphone.utils.Util;
 import org.json.JSONArray;
 import org.json.JSONException;
 

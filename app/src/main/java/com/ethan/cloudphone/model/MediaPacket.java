@@ -1,4 +1,4 @@
-package xyz.aicy.scrcpy.model;
+package com.ethan.cloudphone.model;
 
 /**
  * Created by Alexandr Golovach on 27.06.16.

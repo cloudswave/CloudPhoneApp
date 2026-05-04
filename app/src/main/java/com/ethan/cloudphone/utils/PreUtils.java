@@ -1,4 +1,4 @@
-package xyz.aicy.scrcpy.utils;
+package com.ethan.cloudphone.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

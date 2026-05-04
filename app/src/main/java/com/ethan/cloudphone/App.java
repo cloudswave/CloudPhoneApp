@@ -8,9 +8,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 
-import xyz.aicy.scrcpy.utils.ExecUtil;
-import xyz.aicy.scrcpy.utils.PreUtils;
-import xyz.aicy.scrcpy.utils.ThreadUtils;
+import com.ethan.cloudphone.utils.ExecUtil;
+import com.ethan.cloudphone.utils.PreUtils;
+import com.ethan.cloudphone.utils.ThreadUtils;
 
 import java.util.HashMap;
 import java.util.LinkedList;

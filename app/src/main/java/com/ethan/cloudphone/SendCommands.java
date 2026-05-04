@@ -5,7 +5,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
-import xyz.aicy.scrcpy.utils.ThreadUtils;
+import com.ethan.cloudphone.utils.ThreadUtils;
 
 import java.io.File;
 import java.io.IOException;

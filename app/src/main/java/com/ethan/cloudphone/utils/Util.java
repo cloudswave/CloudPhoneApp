@@ -1,11 +1,11 @@
-package xyz.aicy.scrcpy.utils;
+package com.ethan.cloudphone.utils;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.util.TypedValue;
 
-import xyz.aicy.scrcpy.Scrcpy;
+import com.ethan.cloudphone.Scrcpy;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

@@ -1,4 +1,4 @@
-package xyz.aicy.scrcpy.utils;
+package com.ethan.cloudphone.utils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -17,7 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import xyz.aicy.scrcpy.R;
+import com.ethan.cloudphone.R;
 
 public final class Progress {
 

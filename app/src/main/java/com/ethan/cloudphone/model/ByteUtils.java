@@ -1,4 +1,4 @@
-package xyz.aicy.scrcpy.model;
+package com.ethan.cloudphone.model;
 
 import java.math.BigInteger;
 import java.nio.ByteBuffer;

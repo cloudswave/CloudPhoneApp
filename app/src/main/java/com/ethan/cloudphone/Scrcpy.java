@@ -9,13 +9,13 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.Surface;
 
-import xyz.aicy.scrcpy.decoder.AudioDecoder;
-import xyz.aicy.scrcpy.decoder.VideoDecoder;
-import xyz.aicy.scrcpy.model.AudioPacket;
-import xyz.aicy.scrcpy.model.ByteUtils;
-import xyz.aicy.scrcpy.model.MediaPacket;
-import xyz.aicy.scrcpy.model.VideoPacket;
-import xyz.aicy.scrcpy.utils.Util;
+import com.ethan.cloudphone.decoder.AudioDecoder;
+import com.ethan.cloudphone.decoder.VideoDecoder;
+import com.ethan.cloudphone.model.AudioPacket;
+import com.ethan.cloudphone.model.ByteUtils;
+import com.ethan.cloudphone.model.MediaPacket;
+import com.ethan.cloudphone.model.VideoPacket;
+import com.ethan.cloudphone.utils.Util;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

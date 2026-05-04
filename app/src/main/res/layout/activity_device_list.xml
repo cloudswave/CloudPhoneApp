@@ -33,7 +33,7 @@
             android:background="?android:attr/selectableItemBackgroundBorderless"
             android:contentDescription="添加设备"
             android:src="@drawable/ic_add"
-            app:tint="@color/text_primary"
+            android:tint="@color/text_primary"
             tools:ignore="UseAppTint" />
 
         <Button

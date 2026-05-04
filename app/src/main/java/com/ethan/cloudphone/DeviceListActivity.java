@@ -116,8 +116,9 @@ public class DeviceListActivity extends Activity {
                 View itemView = createDeviceItem(device);
                 GridLayout.LayoutParams params = new GridLayout.LayoutParams();
                 params.width = 0;
-                params.height = LinearLayout.LayoutParams.WRAP_CONTENT;
+                params.height = 0;
                 params.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f);
+                params.rowSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f);
                 params.setMargins(8, 8, 8, 8);
                 itemView.setLayoutParams(params);
                 gridLayout.addView(itemView);

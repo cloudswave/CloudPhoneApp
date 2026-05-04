@@ -5,38 +5,48 @@
     android:background="@drawable/device_card_background"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="12dp">
+    android:padding="8dp">
 
-    <!-- 状态图标 -->
-    <ImageView
-        android:id="@+id/iv_status"
-        android:layout_width="12dp"
-        android:layout_height="12dp"
-        android:layout_gravity="end"
-        android:layout_marginBottom="4dp"
-        android:src="@drawable/status_online" />
-
-    <!-- 设备名称 -->
-    <TextView
-        android:id="@+id/tv_device_name"
+    <!-- 手机屏幕模拟区域 (9:16 比例) -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:maxLines="1"
-        android:text="设备名称"
-        android:textColor="@color/white"
-        android:textSize="13sp"
-        android:textStyle="bold" />
+        android:layout_height="0dp"
+        android:layout_weight="16"
+        android:background="@color/surface_dark">
+
+        <!-- 状态图标 -->
+        <ImageView
+            android:id="@+id/iv_status"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_gravity="end|top"
+            android:layout_margin="4dp"
+            android:src="@drawable/status_online" />
+
+        <!-- 设备名称 -->
+        <TextView
+            android:id="@+id/tv_device_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#80000000"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:padding="4dp"
+            android:text="设备名称"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </FrameLayout>
 
     <!-- 连接按钮 -->
     <Button
         android:id="@+id/btn_connect"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="6dp"
         android:background="@drawable/button_primary"
-        android:paddingHorizontal="16dp"
         android:text="进入"
         android:textColor="@color/white"
         android:textSize="12sp" />

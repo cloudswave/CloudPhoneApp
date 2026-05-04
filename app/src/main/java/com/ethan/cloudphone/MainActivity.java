@@ -192,6 +192,15 @@ public class MainActivity extends Activity implements Scrcpy.ServiceCallbacks, S
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.context = this;
+        
+        // 检查是否已设置服务器URL和登录状态，如果没有则跳转到设置页面
+        ApiClient apiClient = ApiClient.getInstance(this);
+        if (!apiClient.hasServerUrl() || !apiClient.isLoggedIn()) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            // 不 finish()，让用户设置好服务器URL后可以返回
+        }
+        
         if (savedInstanceState != null) {
             first_time = savedInstanceState.getBoolean("first_time");
             landscape = savedInstanceState.getBoolean("landscape");
